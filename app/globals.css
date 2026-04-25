@@ -1,10 +1,19 @@
 @import "tailwindcss";
 
+/* ── Design Tokens ─────────────────────────────────────────────────────────── */
 :root {
-  --teal: #18BC9C;
-  --dark: #2c3e50;
-  --hero-bg: #555454;
-  --footer-bg: #000000;
+  /* Colors */
+  --bg:           #060b18;
+  --teal:         #18BC9C;
+  --text:         #ffffff;
+  --muted:        #aaaaaa;
+  --dark:         #2c3e50;        /* legacy star divider color */
+  --card-bg:      rgba(255, 255, 255, 0.05);
+  --card-border:  rgba(255, 255, 255, 0.08);
+
+  /* Spacing */
+  --section-py:   6rem 0;
+  --inner-px:     0 5rem;
 }
 
 *, *::before, *::after {
@@ -20,6 +29,8 @@ html {
 body {
   width: 100%;
   min-width: 100%;
+  background-color: var(--bg);
+  color: var(--text);
   font-family: 'Lato', sans-serif;
   overflow-x: hidden;
   margin: 0;
@@ -33,12 +44,60 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 a, a:hover, a:focus, a:active {
-  color: #18BC9C;
+  color: var(--teal);
   outline: 0;
   text-decoration: none;
 }
 
-/* Star divider */
+/* ── Section layout helpers ─────────────────────────────────────────────────── */
+
+/* Full-width section wrapper */
+.section-wrapper {
+  width: 100%;
+  display: block;
+  padding: var(--section-py);
+  background-color: var(--bg);
+}
+
+/* Inner content container — full width with horizontal gutters */
+.section-inner {
+  width: 100%;
+  padding: var(--inner-px);
+}
+
+/* Content body — inset to match Recognition card width
+   (44px arrow + 2rem gap = 84px each side at 20px base) */
+.section-body {
+  margin: 0 84px;
+}
+
+@media (max-width: 900px) {
+  .section-body  { margin: 0 1.5rem; }
+  .section-inner { padding: 0 1.5rem; }
+}
+
+/* ── Glass card ─────────────────────────────────────────────────────────────── */
+.card-glass {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* ── Tech tag pill ──────────────────────────────────────────────────────────── */
+.tag-pill {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  border: 1px solid var(--teal);
+  color: var(--teal);
+  letter-spacing: 0.03em;
+}
+
+/* ── Star divider ───────────────────────────────────────────────────────────── */
 .star-divider {
   margin: 25px auto 30px;
   padding: 0;
@@ -55,12 +114,12 @@ a, a:hover, a:focus, a:active {
   padding: 0 0.25em;
   font-size: 1.5em;
 }
-.star-primary { border-color: #2c3e50; }
-.star-primary::after { color: #2c3e50; background: #fff; }
-.star-light { border-color: #fff; }
-.star-light::after { color: #fff; background: #18BC9C; }
+.star-primary         { border-color: var(--dark); }
+.star-primary::after  { color: var(--dark);  background: var(--bg); }
+.star-light           { border-color: var(--text); }
+.star-light::after    { color: var(--text);  background: var(--teal); }
 
-/* Portfolio caption hover */
+/* ── Portfolio caption hover ─────────────────────────────────────────────────── */
 .portfolio-caption {
   position: absolute;
   inset: 0;
@@ -74,9 +133,10 @@ a, a:hover, a:focus, a:active {
 }
 .portfolio-item:hover .portfolio-caption { opacity: 1; }
 
-/* Project card tilt wrapper */
+/* ── Project card tilt wrapper ───────────────────────────────────────────────── */
 .tilt-card {
-  background: #1d1836;
+  background: #0d1526;
+  border: 1px solid var(--card-border);
   border-radius: 1rem;
   padding: 1.25rem;
   width: 360px;
@@ -85,17 +145,3 @@ a, a:hover, a:focus, a:active {
 @media (max-width: 640px) {
   .tilt-card { width: 100%; }
 }
-
-/* ── Centralised content column ──────────────────────────────────────────────
-   Matches the Recognition quote card's effective width:
-     outer section padding: 5rem each side
-     arrow + gap inset:     84px each side  (44px btn + 2rem gap @ 20px base)
-   Apply to the cards / body div inside every section for visual alignment. */
-.section-body {
-  margin: 0 84px;
-}
-
-@media (max-width: 900px) {
-  .section-body { margin: 0 1.5rem; }
-}
-
