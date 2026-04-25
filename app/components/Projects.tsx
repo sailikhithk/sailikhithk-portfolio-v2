@@ -99,7 +99,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
       transition={{ duration: 0.6, delay: index * 0.15, ease: "easeOut" }}
     >
       <Tilt options={{ max: 15, scale: 1.02, speed: 450 }}>
-        <div style={{ background: "#1d1836", borderRadius: "1rem", padding: "1.25rem", width: "360px" }}>
+        <div style={{ background: "#0d1526", borderRadius: "1rem", padding: "1.25rem", width: "360px", border: "1px solid rgba(255,255,255,0.06)" }}>
           {/* Image */}
           <div style={{ position: "relative", width: "100%", height: "230px", borderRadius: "0.75rem", overflow: "hidden" }}>
             <Image src={project.image} alt={project.name} fill style={{ objectFit: "cover" }} sizes="360px" />

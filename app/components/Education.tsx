@@ -5,7 +5,7 @@ export default function Education() {
   return (
     <section
       id="education"
-      style={{ width: "100%", display: "block", padding: "6rem 0", backgroundColor: "#555454", color: "#ffffff" }}
+      style={{ width: "100%", display: "block", padding: "6rem 0", backgroundColor: "#060b18", color: "#ffffff" }}
     >
       {/* Centered container */}
       <div style={{ width: "100%", padding: "0 5rem", textAlign: "center" }}>

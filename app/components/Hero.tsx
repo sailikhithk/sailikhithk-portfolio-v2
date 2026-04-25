@@ -8,7 +8,7 @@ export default function Hero() {
       id="page-top"
       className="text-center text-white"
       style={{
-        backgroundColor: "#555454",
+        backgroundColor: "#060b18",
         paddingTop: "120px",
         paddingBottom: "60px",
         width: "100%",

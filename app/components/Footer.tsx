@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer style={{ width: "100%", backgroundColor: "#000", color: "#fff", textAlign: "center" }}>
+    <footer style={{ width: "100%", backgroundColor: "#060b18", color: "#fff", textAlign: "center" }}>
       <div style={{ width: "100%", padding: "3rem 5rem" }}>
         <h3 style={{ fontFamily: "var(--font-montserrat), sans-serif", fontSize: "1.5rem", marginBottom: "2rem", textTransform: "uppercase" }}>
           Let&apos;s Work Together
