@@ -85,10 +85,11 @@ export default function Experience() {
                 display: "flex",
                 gap: "1.5rem",
                 alignItems: "flex-start",
-                background: "#ffffff",
+                background: "rgba(255,255,255,0.05)",
                 borderRadius: "8px",
                 padding: "1.5rem",
-                boxShadow: "0 4px 16px rgba(0,0,0,0.09)",
+                boxShadow: "0 4px 24px rgba(0,0,0,0.3)",
+                border: "1px solid rgba(255,255,255,0.08)",
               }}
             >
               {/* Logo column */}
@@ -140,7 +141,7 @@ export default function Experience() {
                 <p style={{ color: "#18BC9C", fontWeight: 600, fontSize: "0.82rem", margin: "0 0 8px" }}>
                   {job.role}
                 </p>
-                <p style={{ color: "#bbb", fontSize: "0.88rem", lineHeight: "1.65", margin: "0 0 6px" }}>
+                <p style={{ color: "#ccc", fontSize: "0.88rem", lineHeight: "1.65", margin: "0 0 6px" }}>
                   {job.desc}
                 </p>
                 <p style={{ color: "#aaa", fontSize: "0.82rem", fontStyle: "italic", margin: 0 }}>
