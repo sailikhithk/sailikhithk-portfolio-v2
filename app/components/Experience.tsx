@@ -74,7 +74,7 @@ export default function Experience() {
         </div>
 
         {/* Cards */}
-        <div ref={ref} style={{ display: "flex", flexDirection: "column", gap: "1.5rem", margin: "0 84px" }}>
+        <div ref={ref} className="section-body" style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
           {jobs.map((job, i) => (
             <motion.div
               key={job.company}

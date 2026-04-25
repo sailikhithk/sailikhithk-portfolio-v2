@@ -180,6 +180,7 @@ export default function Projects() {
         {/* Cards grid */}
         <div
           ref={ref}
+          className="section-body"
           style={{ display: "flex", flexWrap: "wrap", gap: "1.75rem", justifyContent: "center", marginTop: "4rem" }}
         >
           {inView && projects.map((project, i) => (

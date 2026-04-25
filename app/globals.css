@@ -85,3 +85,17 @@ a, a:hover, a:focus, a:active {
 @media (max-width: 640px) {
   .tilt-card { width: 100%; }
 }
+
+/* ── Centralised content column ──────────────────────────────────────────────
+   Matches the Recognition quote card's effective width:
+     outer section padding: 5rem each side
+     arrow + gap inset:     84px each side  (44px btn + 2rem gap @ 20px base)
+   Apply to the cards / body div inside every section for visual alignment. */
+.section-body {
+  margin: 0 84px;
+}
+
+@media (max-width: 900px) {
+  .section-body { margin: 0 1.5rem; }
+}
+
