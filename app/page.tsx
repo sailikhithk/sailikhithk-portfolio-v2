@@ -1,7 +1,6 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-import About from "./components/About";
-import TechStack from "./components/TechStack";
+import AboutAndTechStack from "./components/AboutAndTechStack";
 import Recognition from "./components/Recognition";
 import Experience from "./components/Experience";
 import Education from "./components/Education";
@@ -13,8 +12,7 @@ export default function Home() {
     <>
       <Navbar />
       <Hero />
-      <About />
-      <TechStack />
+      <AboutAndTechStack />
       <Recognition />
       <Experience />
       <Education />

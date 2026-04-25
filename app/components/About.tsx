@@ -78,26 +78,6 @@ export default function About() {
           ))}
         </div>
 
-        {/* Contact icons */}
-        <div style={{ textAlign: "center", marginTop: "4rem" }}>
-          <h4 style={{ fontFamily: "var(--font-montserrat)", color: "#2c3e50", marginBottom: "1rem", textTransform: "uppercase" }}>
-            Contact Me
-          </h4>
-          <div style={{ display: "flex", justifyContent: "center", gap: "1.5rem" }}>
-            <a href="https://www.linkedin.com/in/sailikhithk" target="_blank" rel="noopener noreferrer">
-              <i className="fa fa-linkedin" style={{ color: "#0e76a7", fontSize: "48px" }} />
-            </a>
-            <a href="https://github.com/sailikhithk" target="_blank" rel="noopener noreferrer">
-              <i className="fa fa-github" style={{ color: "#333", fontSize: "48px" }} />
-            </a>
-            <a href="https://twitter.com/codewithsai" target="_blank" rel="noopener noreferrer">
-              <i className="fa fa-twitter" style={{ color: "#00ACEE", fontSize: "48px" }} />
-            </a>
-            <a href="mailto:sailikhithcse@gmail.com">
-              <i className="fa fa-envelope" style={{ color: "red", fontSize: "48px" }} />
-            </a>
-          </div>
-        </div>
       </div>
     </section>
   );

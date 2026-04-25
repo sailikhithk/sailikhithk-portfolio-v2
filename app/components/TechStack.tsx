@@ -52,14 +52,36 @@ const SKILLS: Record<string, Skill> = {
 function useKeycapSounds() {
   const pressRef = useRef<HTMLAudioElement | null>(null);
   const releaseRef = useRef<HTMLAudioElement | null>(null);
+  const interacted = useRef(false);
+
   useEffect(() => {
     pressRef.current = new Audio("/assets/keycap-sounds/press.mp3");
     releaseRef.current = new Audio("/assets/keycap-sounds/release.mp3");
     if (pressRef.current) pressRef.current.volume = 0.4;
     if (releaseRef.current) releaseRef.current.volume = 0.3;
+
+    // Flip flag on first real user gesture so browser allows audio
+    const unlock = () => { interacted.current = true; };
+    window.addEventListener("click", unlock, { once: true });
+    window.addEventListener("keydown", unlock, { once: true });
+    window.addEventListener("touchstart", unlock, { once: true });
+    return () => {
+      window.removeEventListener("click", unlock);
+      window.removeEventListener("keydown", unlock);
+      window.removeEventListener("touchstart", unlock);
+    };
   }, []);
-  const playPress = () => { try { if (pressRef.current) { pressRef.current.currentTime = 0; pressRef.current.play(); } } catch {} };
-  const playRelease = () => { try { if (releaseRef.current) { releaseRef.current.currentTime = 0; releaseRef.current.play(); } } catch {} };
+
+  const playPress = () => {
+    if (!interacted.current || !pressRef.current) return;
+    pressRef.current.currentTime = 0;
+    pressRef.current.play().catch(() => {});
+  };
+  const playRelease = () => {
+    if (!interacted.current || !releaseRef.current) return;
+    releaseRef.current.currentTime = 0;
+    releaseRef.current.play().catch(() => {});
+  };
   return { playPress, playRelease };
 }
 
@@ -183,10 +205,10 @@ export default function TechStack() {
   return (
     <section
       id="techstack"
-      style={{ width: "100%", position: "relative", backgroundColor: "#060b18", minHeight: "100vh", overflow: "hidden" }}
+      style={{ width: "100%", position: "relative", backgroundColor: "#060b18", overflow: "hidden" }}
     >
       {/* Heading */}
-      <div style={{ textAlign: "center", paddingTop: "5rem", position: "relative", zIndex: 10 }}>
+      <div style={{ textAlign: "center", paddingTop: "1.5rem", position: "relative", zIndex: 10 }}>
         <p style={{ color: "#18BC9C", textTransform: "uppercase", letterSpacing: "0.15em", fontSize: "0.8rem", fontWeight: 700, marginBottom: "0.5rem" }}>
           hover or press a key
         </p>
@@ -197,7 +219,7 @@ export default function TechStack() {
       </div>
 
       {/* Skill info panel */}
-      <div style={{ display: "flex", justifyContent: "center", marginTop: "2rem", position: "relative", zIndex: 10, minHeight: "80px" }}>
+      <div style={{ display: "flex", justifyContent: "center", marginTop: "1rem", position: "relative", zIndex: 10, minHeight: "64px" }}>
         <AnimatePresence mode="wait">
           {selectedSkill && (
             <motion.div
@@ -235,7 +257,7 @@ export default function TechStack() {
       </div>
 
       {/* Spline canvas */}
-      <div style={{ width: "100%", height: "70vh" }}>
+      <div style={{ width: "100%", height: "52vh" }}>
         <Suspense fallback={
           <div style={{ display: "flex", alignItems: "center", justifyContent: "center", height: "100%", color: "#555" }}>
             Loading keyboard…
