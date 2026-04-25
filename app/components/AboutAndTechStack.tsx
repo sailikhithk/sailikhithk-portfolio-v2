@@ -149,7 +149,7 @@ export default function AboutAndTechStack() {
       id="about"
       style={{ width: "100%", backgroundColor: "#060b18", padding: "2.5rem 0 1.5rem" }}
     >
-      <div style={{ width: "100%", padding: "0 4rem" }}>
+      <div style={{ width: "100%", padding: "0 5rem" }}>
 
         {/* ── Top heading row ─────────────────────────────────────────────── */}
         <div style={{ textAlign: "center", marginBottom: "1.25rem" }}>
