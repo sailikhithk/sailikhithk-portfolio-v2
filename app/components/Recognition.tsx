@@ -24,7 +24,7 @@ export default function Recognition() {
         width: "100%",
         display: "block",
         padding: "6rem 0",
-        backgroundColor: "#2c3e50",
+        backgroundColor: "#555454",
         color: "#ffffff",
       }}
     >

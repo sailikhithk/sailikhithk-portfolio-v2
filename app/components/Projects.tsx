@@ -159,7 +159,7 @@ export default function Projects() {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section id="portfolio" style={{ width: "100%", display: "block", padding: "6rem 0", backgroundColor: "#fff" }}>
+    <section id="portfolio" style={{ width: "100%", display: "block", padding: "6rem 0", backgroundColor: "#060b18" }}>
       <div style={{ width: "100%", padding: "0 5rem" }}>
 
         {/* Heading */}
@@ -167,11 +167,11 @@ export default function Projects() {
           <p style={{ color: "#18BC9C", textTransform: "uppercase", letterSpacing: "0.1em", fontSize: "0.875rem", fontWeight: 600, marginBottom: "0.5rem" }}>
             My work
           </p>
-          <h2 style={{ fontFamily: "var(--font-montserrat), sans-serif", color: "#2c3e50", fontSize: "3rem", margin: 0, textTransform: "uppercase" }}>
+          <h2 style={{ fontFamily: "var(--font-montserrat), sans-serif", color: "#ffffff", fontSize: "3rem", margin: 0, textTransform: "uppercase" }}>
             Projects
           </h2>
           <hr className="star-divider star-primary" />
-          <p style={{ color: "#777", fontSize: "1rem", lineHeight: "1.7", marginTop: "1rem" }}>
+          <p style={{ color: "#aaa", fontSize: "1rem", lineHeight: "1.7", marginTop: "1rem" }}>
             Real-world projects showcasing skills across GenAI, ML infrastructure,
             full-stack development, and cloud platforms.
           </p>

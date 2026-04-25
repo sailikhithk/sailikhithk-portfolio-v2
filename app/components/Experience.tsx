@@ -52,7 +52,7 @@ export default function Experience() {
   return (
     <section
       id="experience"
-      style={{ width: "100%", display: "block", padding: "6rem 0", backgroundColor: "#ffffff" }}
+      style={{ width: "100%", display: "block", padding: "6rem 0", backgroundColor: "#060b18" }}
     >
       {/* Centered container */}
       <div style={{ width: "100%", padding: "0 5rem" }}>
@@ -62,7 +62,7 @@ export default function Experience() {
           <h2
             style={{
               fontFamily: "var(--font-montserrat), sans-serif",
-              color: "#2c3e50",
+              color: "#ffffff",
               fontSize: "3rem",
               margin: 0,
               textTransform: "uppercase",
@@ -119,7 +119,7 @@ export default function Experience() {
                 <h3
                   style={{
                     fontFamily: "var(--font-montserrat), sans-serif",
-                    color: "#2c3e50",
+                    color: "#ffffff",
                     fontSize: "1rem",
                     margin: "0 0 4px",
                     textTransform: "uppercase",
@@ -140,7 +140,7 @@ export default function Experience() {
                 <p style={{ color: "#18BC9C", fontWeight: 600, fontSize: "0.82rem", margin: "0 0 8px" }}>
                   {job.role}
                 </p>
-                <p style={{ color: "#555", fontSize: "0.88rem", lineHeight: "1.65", margin: "0 0 6px" }}>
+                <p style={{ color: "#bbb", fontSize: "0.88rem", lineHeight: "1.65", margin: "0 0 6px" }}>
                   {job.desc}
                 </p>
                 <p style={{ color: "#aaa", fontSize: "0.82rem", fontStyle: "italic", margin: 0 }}>
