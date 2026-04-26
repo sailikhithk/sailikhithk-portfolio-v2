@@ -1,5 +1,11 @@
 "use client";
-import React, { useState, useEffect, useRef, useMemo, useCallback } from "react";
+import React, {
+  useState,
+  useEffect,
+  useRef,
+  useMemo,
+  useCallback,
+} from "react";
 import Globe from "react-globe.gl";
 import * as satellite from "satellite.js";
 
@@ -58,26 +64,28 @@ export default function GlobeSatellites() {
 
     // Update satellite positions
     const gmst = satellite.gstime(time);
-    return satData
-      .map((d) => {
-        const eci = satellite.propagate(d.satrec, time);
-        if (eci?.position) {
-          const gdPos = satellite.eciToGeodetic(
-            eci.position as satellite.EciVec3<number>,
-            gmst
-          );
-          const lat = satellite.radiansToDegrees(gdPos.latitude);
-          const lng = satellite.radiansToDegrees(gdPos.longitude);
-          const alt = gdPos.height / EARTH_RADIUS_KM;
-          return { ...d, lat, lng, alt };
-        } else {
-          d.lat = NaN;
-          d.lng = NaN;
-          d.alt = NaN;
-        }
-        return d;
-      })
-      .filter((d) => !isNaN(d.lat) && !isNaN(d.lng) && !isNaN(d.alt));
+    return [
+      satData
+        .map((d) => {
+          const eci = satellite.propagate(d.satrec, time);
+          if (eci?.position) {
+            const gdPos = satellite.eciToGeodetic(
+              eci.position as satellite.EciVec3<number>,
+              gmst,
+            );
+            const lat = satellite.radiansToDegrees(gdPos.latitude);
+            const lng = satellite.radiansToDegrees(gdPos.longitude);
+            const alt = gdPos.height / EARTH_RADIUS_KM;
+            return { ...d, lat, lng, alt };
+          } else {
+            d.lat = NaN;
+            d.lng = NaN;
+            d.alt = NaN;
+          }
+          return d;
+        })
+        .filter((d) => !isNaN(d.lat) && !isNaN(d.lng) && !isNaN(d.alt)),
+    ];
   }, [satData, time]);
 
   return (
@@ -101,8 +109,8 @@ export default function GlobeSatellites() {
         particleAltitude="alt"
         particlesColor={useCallback(() => "palegreen", [])}
         backgroundColor="rgba(0,0,0,0)"
-        width={500}
-        height={500}
+        width={750}
+        height={750}
       />
     </div>
   );

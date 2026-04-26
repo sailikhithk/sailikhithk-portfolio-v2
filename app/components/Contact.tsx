@@ -1,9 +1,12 @@
 "use client";
-import { Suspense, lazy } from "react";
+import { Suspense } from "react";
+import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import SectionHeading from "@/app/components/ui/SectionHeading";
 
-const Globe = lazy(() => import("@/app/components/ui/Globe"));
+const Globe = dynamic(() => import("@/app/components/ui/Globe"), {
+  ssr: false,
+});
 
 const socialLinks = [
   {
