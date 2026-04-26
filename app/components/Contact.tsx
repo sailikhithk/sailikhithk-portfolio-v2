@@ -1,62 +1,9 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { useState, Suspense, lazy } from "react";
 import { motion } from "framer-motion";
 import SectionHeading from "@/app/components/ui/SectionHeading";
-import createGlobe from "cobe";
 
-function Globe() {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-  const phiRef = useRef(0);
-
-  useEffect(() => {
-    if (!canvasRef.current) return;
-    const globe = createGlobe(canvasRef.current, {
-      devicePixelRatio: 2,
-      width: 400,
-      height: 400,
-      phi: 0,
-      theta: 0.3,
-      dark: 1,
-      diffuse: 1.2,
-      mapSamples: 16000,
-      mapBrightness: 6,
-      baseColor: [0.08, 0.09, 0.14],
-      markerColor: [0.09, 0.74, 0.61],
-      glowColor: [0.09, 0.74, 0.61],
-      markers: [
-        { location: [37.7749, -122.4194], size: 0.07 }, // San Francisco
-      ],
-    });
-
-    let rafId: number;
-    const animate = () => {
-      phiRef.current += 0.003;
-      globe.update({ phi: phiRef.current });
-      rafId = requestAnimationFrame(animate);
-    };
-    rafId = requestAnimationFrame(animate);
-
-    return () => {
-      cancelAnimationFrame(rafId);
-      globe.destroy();
-    };
-  }, []);
-
-  return (
-    <canvas
-      ref={canvasRef}
-      width={400}
-      height={400}
-      style={{
-        width: "100%",
-        maxWidth: "280px",
-        aspectRatio: "1",
-        margin: "0 auto",
-        display: "block",
-      }}
-    />
-  );
-}
+const Globe = lazy(() => import("@/app/components/ui/Globe"));
 
 type FieldErrors = Partial<Record<"fullName" | "email" | "message", string>>;
 
@@ -173,13 +120,40 @@ export default function Contact() {
             alignItems: "start",
           }}
         >
-          {/* LEFT — Info */}
+          {/* LEFT — Globe + Info */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.5 }}
           >
+            {/* Globe */}
+            <div
+              style={{
+                width: "100%",
+                aspectRatio: "1",
+                maxWidth: "340px",
+                margin: "0 auto 2rem",
+                position: "relative",
+              }}
+            >
+              <Suspense
+                fallback={
+                  <div
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      borderRadius: "50%",
+                      background: "rgba(24,188,156,0.05)",
+                      border: "1px solid rgba(24,188,156,0.2)",
+                    }}
+                  />
+                }
+              >
+                <Globe />
+              </Suspense>
+            </div>
+
             <h2
               style={{
                 fontFamily: "var(--font-montserrat), sans-serif",
@@ -229,11 +203,6 @@ export default function Contact() {
               <p style={{ color: "var(--muted)", margin: 0 }}>
                 San Francisco, CA
               </p>
-            </div>
-
-            {/* 3D Globe */}
-            <div style={{ margin: "1.5rem 0" }}>
-              <Globe />
             </div>
 
             <div style={{ display: "flex", gap: "1.25rem" }}>
