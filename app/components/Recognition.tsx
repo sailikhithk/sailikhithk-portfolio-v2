@@ -25,8 +25,10 @@ export default function Recognition() {
       <div className="section-inner">
         <SectionHeading title="Recognition" divider="light" />
 
-        <div style={{ display: "flex", alignItems: "center", gap: "2rem" }}>
-          <button onClick={prev} disabled={index === 0} aria-label="Previous" style={btnStyle(index === 0)}>◀</button>
+        <div style={{ position: "relative" }}>
+          {/* Left arrow — sits outside section-inner in the gutter */}
+          <button onClick={prev} disabled={index === 0} aria-label="Previous"
+            style={{ ...btnStyle(index === 0), position: "absolute", left: "-68px", top: "50%", transform: "translateY(-50%)" }}>◀</button>
 
           <AnimatePresence mode="wait">
             <motion.div
@@ -36,7 +38,6 @@ export default function Recognition() {
               exit={{ opacity: 0, x: -40 }}
               transition={{ duration: 0.3 }}
               style={{
-                flex: 1,
                 background: "var(--card-bg)",
                 border: "1px solid rgba(24,188,156,0.3)",
                 borderRadius: "12px",
@@ -70,7 +71,9 @@ export default function Recognition() {
             </motion.div>
           </AnimatePresence>
 
-          <button onClick={next} disabled={index === recognitions.length - 1} aria-label="Next" style={btnStyle(index === recognitions.length - 1)}>▶</button>
+          {/* Right arrow — sits in the gutter */}
+          <button onClick={next} disabled={index === recognitions.length - 1} aria-label="Next"
+            style={{ ...btnStyle(index === recognitions.length - 1), position: "absolute", right: "-68px", top: "50%", transform: "translateY(-50%)" }}>▶</button>
         </div>
 
         {/* Dots */}

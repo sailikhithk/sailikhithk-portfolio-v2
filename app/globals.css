@@ -59,21 +59,21 @@ a, a:hover, a:focus, a:active {
   background-color: var(--bg);
 }
 
-/* Inner content container — full width with horizontal gutters */
+/* Inner content container — width matches Recognition card
+   (outer 5rem + 84px arrow-inset = ~184px each side at 20px base) */
 .section-inner {
   width: 100%;
-  padding: var(--inner-px);
+  padding: 0 calc(5rem + 84px);
 }
 
-/* Content body — inset to match Recognition card width
-   (44px arrow + 2rem gap = 84px each side at 20px base) */
+/* Legacy alias — section-inner now carries the full inset */
 .section-body {
-  margin: 0 84px;
+  margin: 0;
 }
 
 @media (max-width: 900px) {
-  .section-body  { margin: 0 1.5rem; }
   .section-inner { padding: 0 1.5rem; }
+  .section-body  { margin: 0; }
 }
 
 /* ── Glass card ─────────────────────────────────────────────────────────────── */
