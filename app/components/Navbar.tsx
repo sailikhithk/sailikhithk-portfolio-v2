@@ -35,7 +35,7 @@ export default function Navbar() {
         top: 0,
         width: "100%",
         zIndex: 50,
-        backgroundColor: "#060b18",
+        backgroundColor: "var(--bg)",
         padding: scrolled ? "10px 0" : "25px 0",
         fontFamily: "var(--font-montserrat), sans-serif",
         transition: "padding 0.3s",
@@ -122,7 +122,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {open && (
-        <div style={{ backgroundColor: "#060b18", padding: "0 1.5rem 1rem" }}>
+        <div style={{ backgroundColor: "var(--bg)", padding: "0 1.5rem 1rem" }}>
           {[...navLinks, { id: "medium", label: "Medium" }].map((link) => (
             <a
               key={link.id}
