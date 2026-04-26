@@ -53,9 +53,8 @@ export default function GlobeSatellites() {
   // Set initial point of view to North America
   useEffect(() => {
     if (globeEl.current) {
-      // Altitude 1.33 makes the globe appear 1.5x bigger than altitude 2
       globeEl.current.pointOfView(
-        { lat: 39.8, lng: -98.5, altitude: 1.33 },
+        { lat: 39.8, lng: -98.5, altitude: 2.2 },
         1000,
       );
       globeEl.current.controls().autoRotate = true;
@@ -101,6 +100,7 @@ export default function GlobeSatellites() {
         alignItems: "center",
         justifyContent: "center",
         cursor: "grab",
+        transform: "scale(1.5)",
       }}
     >
       <Globe
@@ -113,8 +113,8 @@ export default function GlobeSatellites() {
         particleAltitude="alt"
         particlesColor={useCallback(() => "palegreen", [])}
         backgroundColor="rgba(0,0,0,0)"
-        width={750}
-        height={750}
+        width={800}
+        height={800}
       />
     </div>
   );

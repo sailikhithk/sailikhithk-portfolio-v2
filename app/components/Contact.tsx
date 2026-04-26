@@ -150,6 +150,8 @@ export default function Contact() {
               position: "relative",
               overflow: "hidden",
               borderRadius: "50%",
+              transform: "translateZ(0)",
+              WebkitMaskImage: "-webkit-radial-gradient(white, black)",
             }}
           >
             <Suspense
