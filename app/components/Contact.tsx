@@ -149,6 +149,7 @@ export default function Contact() {
               aspectRatio: "1",
               position: "relative",
               overflow: "hidden",
+              borderRadius: "50%",
             }}
           >
             <Suspense

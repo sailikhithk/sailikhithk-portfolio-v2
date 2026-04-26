@@ -53,7 +53,11 @@ export default function GlobeSatellites() {
   // Set initial point of view to North America
   useEffect(() => {
     if (globeEl.current) {
-      globeEl.current.pointOfView({ lat: 39.8, lng: -98.5, altitude: 2 }, 1000);
+      // Altitude 1.33 makes the globe appear 1.5x bigger than altitude 2
+      globeEl.current.pointOfView(
+        { lat: 39.8, lng: -98.5, altitude: 1.33 },
+        1000,
+      );
       globeEl.current.controls().autoRotate = true;
       globeEl.current.controls().autoRotateSpeed = 0.5;
     }
