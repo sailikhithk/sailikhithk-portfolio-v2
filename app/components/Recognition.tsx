@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import SectionHeading from "@/app/components/ui/SectionHeading";
-import { recognitions } from "@/app/data/recognition";
+import { recognitions } from "@/app/data";
 
 export default function Recognition() {
   const [index, setIndex] = useState(0);

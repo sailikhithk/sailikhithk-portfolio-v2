@@ -3,7 +3,7 @@ import React, { Suspense, useEffect, useRef, useState } from "react";
 import { Application, SplineEvent } from "@splinetool/runtime";
 import gsap from "gsap";
 import { AnimatePresence, motion, useInView } from "framer-motion";
-import { cards, stats, SKILLS } from "@/app/data/about";
+import { cards, stats, SKILLS } from "@/app/data";
 import type { Skill } from "@/app/types";
 
 const Spline = React.lazy(() => import("@splinetool/react-spline"));

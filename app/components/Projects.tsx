@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useRef } from "react";
 import { Tilt } from "react-tilt";
 import SectionHeading from "@/app/components/ui/SectionHeading";
-import { projects, type Project } from "@/app/data/projects";
+import { projects, type Project } from "@/app/data";
 
 function ProjectCard({ project, index }: { project: Project; index: number }) {
   return (

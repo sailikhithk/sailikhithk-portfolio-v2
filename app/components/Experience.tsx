@@ -2,7 +2,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import SectionHeading from "@/app/components/ui/SectionHeading";
-import { jobs } from "@/app/data/experience";
+import { jobs } from "@/app/data";
 
 export default function Experience() {
   const ref = useRef(null);
