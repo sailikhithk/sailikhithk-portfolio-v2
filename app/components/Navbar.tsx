@@ -7,6 +7,7 @@ const navLinks = [
   { id: "experience", label: "Experience" },
   { id: "education", label: "Education" },
   { id: "portfolio", label: "Projects" },
+  { id: "contact", label: "Contact" },
 ];
 
 const linkStyle: React.CSSProperties = {
