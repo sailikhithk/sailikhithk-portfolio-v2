@@ -1,7 +1,62 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import SectionHeading from "@/app/components/ui/SectionHeading";
+import createGlobe from "cobe";
+
+function Globe() {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const phiRef = useRef(0);
+
+  useEffect(() => {
+    if (!canvasRef.current) return;
+    const globe = createGlobe(canvasRef.current, {
+      devicePixelRatio: 2,
+      width: 400,
+      height: 400,
+      phi: 0,
+      theta: 0.3,
+      dark: 1,
+      diffuse: 1.2,
+      mapSamples: 16000,
+      mapBrightness: 6,
+      baseColor: [0.08, 0.09, 0.14],
+      markerColor: [0.09, 0.74, 0.61],
+      glowColor: [0.09, 0.74, 0.61],
+      markers: [
+        { location: [37.7749, -122.4194], size: 0.07 }, // San Francisco
+      ],
+    });
+
+    let rafId: number;
+    const animate = () => {
+      phiRef.current += 0.003;
+      globe.update({ phi: phiRef.current });
+      rafId = requestAnimationFrame(animate);
+    };
+    rafId = requestAnimationFrame(animate);
+
+    return () => {
+      cancelAnimationFrame(rafId);
+      globe.destroy();
+    };
+  }, []);
+
+  return (
+    <canvas
+      ref={canvasRef}
+      width={400}
+      height={400}
+      style={{
+        width: "100%",
+        maxWidth: "280px",
+        aspectRatio: "1",
+        margin: "0 auto",
+        display: "block",
+      }}
+    />
+  );
+}
 
 type FieldErrors = Partial<Record<"fullName" | "email" | "message", string>>;
 
@@ -174,6 +229,11 @@ export default function Contact() {
               <p style={{ color: "var(--muted)", margin: 0 }}>
                 San Francisco, CA
               </p>
+            </div>
+
+            {/* 3D Globe */}
+            <div style={{ margin: "1.5rem 0" }}>
+              <Globe />
             </div>
 
             <div style={{ display: "flex", gap: "1.25rem" }}>
