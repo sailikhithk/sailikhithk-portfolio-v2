@@ -61,7 +61,7 @@ export default function AboutAndTechStack() {
     await sleep(400);
     kbd.visible = true;
     const w = window.innerWidth;
-    const s = 0.25 * Math.min(Math.max(w / 1280, 0.5), 1.15);
+    const s = 0.32 * Math.min(Math.max(w / 1280, 0.5), 1.15);
     gsap.set(kbd.scale, { x: s, y: s, z: s });
     gsap.set(kbd.position, { x: 0, y: -40, z: 0 });
     gsap.set(kbd.rotation, { x: 0, y: Math.PI / 12, z: 0 });
@@ -356,7 +356,7 @@ export default function AboutAndTechStack() {
                 Tech Stack
               </h3>
               <div
-                style={{ width: "100%", height: "44vh", marginTop: "-1rem" }}
+                style={{ width: "100%", height: "50vh", marginTop: "-1rem" }}
               >
                 <Suspense
                   fallback={
