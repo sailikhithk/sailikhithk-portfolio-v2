@@ -15,10 +15,10 @@ export const projects: Project[] = [
     description:
       "GenAI 5-step LLM wizard integrating 30+ models. Scaled to 10,000 rows/run for ~55 analysts. Presidio PII pipeline, AI clustering, Insight Miner.",
     tags: [
-      { name: "python",   color: "#18BC9C" },
+      { name: "python", color: "#18BC9C" },
       { name: "streamlit", color: "#18BC9C" },
-      { name: "celery",   color: "#aaa" },
-      { name: "llm",      color: "#18BC9C" },
+      { name: "celery", color: "#aaa" },
+      { name: "llm", color: "#18BC9C" },
       { name: "presidio", color: "#aaa" },
     ],
     image: "/img/Plagiarism.jpg",
@@ -28,11 +28,11 @@ export const projects: Project[] = [
     description:
       "Full-stack healthcare portal for medication management. Java/Spring Boot backend, React frontend, deployed on OpenShift OCP across clinical environments.",
     tags: [
-      { name: "java",        color: "#18BC9C" },
+      { name: "java", color: "#18BC9C" },
       { name: "spring-boot", color: "#18BC9C" },
-      { name: "react",       color: "#aaa" },
-      { name: "openshift",   color: "#aaa" },
-      { name: "postgresql",  color: "#18BC9C" },
+      { name: "react", color: "#aaa" },
+      { name: "openshift", color: "#aaa" },
+      { name: "postgresql", color: "#18BC9C" },
     ],
     image: "/img/hashcode.jpg",
   },
@@ -43,7 +43,7 @@ export const projects: Project[] = [
     tags: [
       { name: "react", color: "#18BC9C" },
       { name: "gemma", color: "#aaa" },
-      { name: "ai",    color: "#18BC9C" },
+      { name: "ai", color: "#18BC9C" },
     ],
     image: "/img/Hacknyu.png",
     github: "https://github.com/sailikhithk",
@@ -53,20 +53,21 @@ export const projects: Project[] = [
     description:
       "ML reusable framework for subsurface applications. Refactored Jupyter → Python package (5× faster). Deployed on AWS SageMaker. Published at SPE ATCE Conference.",
     tags: [
-      { name: "python",       color: "#18BC9C" },
-      { name: "pyspark",      color: "#aaa" },
+      { name: "python", color: "#18BC9C" },
+      { name: "pyspark", color: "#aaa" },
       { name: "aws-sagemaker", color: "#18BC9C" },
-      { name: "mlflow",       color: "#aaa" },
+      { name: "mlflow", color: "#aaa" },
     ],
     image: "/img/images.jpg",
   },
   {
     name: "COVID-19 Analytics Dashboard",
-    description: "Real-time global COVID-19 statistics and analytics dashboard.",
+    description:
+      "Real-time global COVID-19 statistics and analytics dashboard.",
     tags: [
       { name: "python", color: "#18BC9C" },
       { name: "plotly", color: "#aaa" },
-      { name: "flask",  color: "#18BC9C" },
+      { name: "flask", color: "#18BC9C" },
     ],
     image: "/img/covid19.png",
     github: "https://github.com/sailikhithk/covid19-by-sailikhithk",
@@ -76,10 +77,10 @@ export const projects: Project[] = [
     description:
       "Real-time ERP dashboard across 13 business units. Saved 600+ monthly work hours. Boosted quarterly client activity by 20%.",
     tags: [
-      { name: "python",    color: "#18BC9C" },
-      { name: "kafka",     color: "#aaa" },
+      { name: "python", color: "#18BC9C" },
+      { name: "kafka", color: "#aaa" },
       { name: "elk-stack", color: "#18BC9C" },
-      { name: "oracle",    color: "#aaa" },
+      { name: "oracle", color: "#aaa" },
     ],
     image: "/img/nyc.jpg",
   },

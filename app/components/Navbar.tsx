@@ -41,7 +41,15 @@ export default function Navbar() {
         transition: "padding 0.3s",
       }}
     >
-      <div style={{ width: "100%", padding: "0 2rem", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+      <div
+        style={{
+          width: "100%",
+          padding: "0 2rem",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+        }}
+      >
         {/* Brand */}
         <a
           href="#page-top"
@@ -59,12 +67,23 @@ export default function Navbar() {
         </a>
 
         {/* Desktop nav */}
-        <ul style={{ display: "flex", gap: "1.5rem", listStyle: "none", margin: 0, padding: 0, alignItems: "center" }}>
+        <ul
+          style={{
+            display: "flex",
+            gap: "1.5rem",
+            listStyle: "none",
+            margin: 0,
+            padding: 0,
+            alignItems: "center",
+          }}
+        >
           {navLinks.map((link) => (
             <li key={link.id}>
-              <a href={`#${link.id}`} style={linkStyle}
-                onMouseEnter={e => (e.currentTarget.style.color = "#18BC9C")}
-                onMouseLeave={e => (e.currentTarget.style.color = "#ffffff")}
+              <a
+                href={`#${link.id}`}
+                style={linkStyle}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "#18BC9C")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "#ffffff")}
               >
                 {link.label}
               </a>
@@ -76,8 +95,8 @@ export default function Navbar() {
               target="_blank"
               rel="noopener noreferrer"
               style={linkStyle}
-              onMouseEnter={e => (e.currentTarget.style.color = "#18BC9C")}
-              onMouseLeave={e => (e.currentTarget.style.color = "#ffffff")}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "#18BC9C")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "#ffffff")}
             >
               Medium
             </a>
@@ -87,7 +106,14 @@ export default function Navbar() {
         {/* Mobile hamburger */}
         <button
           onClick={() => setOpen(!open)}
-          style={{ background: "none", border: "none", color: "#ffffff", fontSize: "1.5rem", cursor: "pointer", display: "none" }}
+          style={{
+            background: "none",
+            border: "none",
+            color: "#ffffff",
+            fontSize: "1.5rem",
+            cursor: "pointer",
+            display: "none",
+          }}
           aria-label="Toggle menu"
         >
           ☰
@@ -100,7 +126,11 @@ export default function Navbar() {
           {[...navLinks, { id: "medium", label: "Medium" }].map((link) => (
             <a
               key={link.id}
-              href={link.id === "medium" ? "https://medium.com/sailikhithkanuparthi" : `#${link.id}`}
+              href={
+                link.id === "medium"
+                  ? "https://medium.com/sailikhithkanuparthi"
+                  : `#${link.id}`
+              }
               target={link.id === "medium" ? "_blank" : undefined}
               rel={link.id === "medium" ? "noopener noreferrer" : undefined}
               style={{ ...linkStyle, display: "block", padding: "0.5rem 0" }}

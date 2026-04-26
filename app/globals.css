@@ -3,20 +3,22 @@
 /* ── Design Tokens ─────────────────────────────────────────────────────────── */
 :root {
   /* Colors */
-  --bg:           #060b18;
-  --teal:         #18BC9C;
-  --text:         #ffffff;
-  --muted:        #aaaaaa;
-  --dark:         #2c3e50;        /* legacy star divider color */
-  --card-bg:      rgba(255, 255, 255, 0.05);
-  --card-border:  rgba(255, 255, 255, 0.08);
+  --bg: #060b18;
+  --teal: #18bc9c;
+  --text: #ffffff;
+  --muted: #aaaaaa;
+  --dark: #2c3e50; /* legacy star divider color */
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --card-border: rgba(255, 255, 255, 0.08);
 
   /* Spacing */
-  --section-py:   6rem 0;
-  --inner-px:     0 5rem;
+  --section-py: 6rem 0;
+  --inner-px: 0 5rem;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -31,19 +33,27 @@ body {
   min-width: 100%;
   background-color: var(--bg);
   color: var(--text);
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   overflow-x: hidden;
   margin: 0;
   padding: 0;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Montserrat', sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", sans-serif;
   font-weight: 700;
   text-transform: uppercase;
 }
 
-a, a:hover, a:focus, a:active {
+a,
+a:hover,
+a:focus,
+a:active {
   color: var(--teal);
   outline: 0;
   text-decoration: none;
@@ -72,8 +82,12 @@ a, a:hover, a:focus, a:active {
 }
 
 @media (max-width: 900px) {
-  .section-inner { padding: 0 1.5rem; }
-  .section-body  { margin: 0; }
+  .section-inner {
+    padding: 0 1.5rem;
+  }
+  .section-body {
+    margin: 0;
+  }
 }
 
 /* ── Glass card ─────────────────────────────────────────────────────────────── */
@@ -114,10 +128,20 @@ a, a:hover, a:focus, a:active {
   padding: 0 0.25em;
   font-size: 1.5em;
 }
-.star-primary         { border-color: var(--dark); }
-.star-primary::after  { color: var(--dark);  background: var(--bg); }
-.star-light           { border-color: var(--text); }
-.star-light::after    { color: var(--text);  background: var(--teal); }
+.star-primary {
+  border-color: var(--dark);
+}
+.star-primary::after {
+  color: var(--dark);
+  background: var(--bg);
+}
+.star-light {
+  border-color: var(--text);
+}
+.star-light::after {
+  color: var(--text);
+  background: var(--teal);
+}
 
 /* ── Portfolio caption hover ─────────────────────────────────────────────────── */
 .portfolio-caption {
@@ -131,7 +155,9 @@ a, a:hover, a:focus, a:active {
   align-items: center;
   justify-content: center;
 }
-.portfolio-item:hover .portfolio-caption { opacity: 1; }
+.portfolio-item:hover .portfolio-caption {
+  opacity: 1;
+}
 
 /* ── Project card tilt wrapper ───────────────────────────────────────────────── */
 .tilt-card {
@@ -143,5 +169,7 @@ a, a:hover, a:focus, a:active {
 }
 
 @media (max-width: 640px) {
-  .tilt-card { width: 100%; }
+  .tilt-card {
+    width: 100%;
+  }
 }

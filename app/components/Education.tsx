@@ -10,8 +10,10 @@ const degrees = [
     imgHeight: "100px",
     degree: "MS in Computer Science",
     detail: "GPA 3.69 · May 2021",
-    institution: "New York University, Tandon School of Engineering, New York, NY",
-    courses: "Courses: Data Structures, Big Data, Distributed Systems, Cloud Computing",
+    institution:
+      "New York University, Tandon School of Engineering, New York, NY",
+    courses:
+      "Courses: Data Structures, Big Data, Distributed Systems, Cloud Computing",
   },
   {
     logo: "/img/jntua.png",
@@ -21,14 +23,20 @@ const degrees = [
     imgHeight: "140px",
     degree: "B.Tech in Electronics & Communication Engineering",
     detail: "GPA 4.0 · May 2013",
-    institution: "Jawaharlal Nehru Technological University, Andhra Pradesh, India",
-    courses: "Awarded \"Best Academic Project\" for gesture-controlled Arduino robots coded in C",
+    institution:
+      "Jawaharlal Nehru Technological University, Andhra Pradesh, India",
+    courses:
+      'Awarded "Best Academic Project" for gesture-controlled Arduino robots coded in C',
   },
 ];
 
 export default function Education() {
   return (
-    <section id="education" className="section-wrapper" style={{ color: "var(--text)" }}>
+    <section
+      id="education"
+      className="section-wrapper"
+      style={{ color: "var(--text)" }}
+    >
       <div className="section-inner" style={{ textAlign: "center" }}>
         <SectionHeading title="Education" divider="light" />
 
@@ -40,16 +48,34 @@ export default function Education() {
                 alt={d.alt}
                 width={d.width}
                 height={d.height}
-                style={{ objectFit: "contain", height: d.imgHeight, width: "auto", margin: "0 auto 1.25rem", display: "block" }}
+                style={{
+                  objectFit: "contain",
+                  height: d.imgHeight,
+                  width: "auto",
+                  margin: "0 auto 1.25rem",
+                  display: "block",
+                }}
               />
               <p style={{ fontSize: "1rem", lineHeight: "1.75", margin: 0 }}>
-                <strong>{d.degree}</strong> — {d.detail}<br />
-                {d.institution}<br />
-                <span style={{ color: "#ccc", fontSize: "0.875rem" }}>{d.courses}</span>
+                <strong>{d.degree}</strong> — {d.detail}
+                <br />
+                {d.institution}
+                <br />
+                <span style={{ color: "#ccc", fontSize: "0.875rem" }}>
+                  {d.courses}
+                </span>
               </p>
             </div>
             {i < degrees.length - 1 && (
-              <p style={{ color: "var(--muted)", fontSize: "1.5rem", margin: "0 0 2rem" }}>|</p>
+              <p
+                style={{
+                  color: "var(--muted)",
+                  fontSize: "1.5rem",
+                  margin: "0 0 2rem",
+                }}
+              >
+                |
+              </p>
             )}
           </div>
         ))}
