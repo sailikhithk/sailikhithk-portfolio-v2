@@ -11,6 +11,43 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    name: "Claude Code Ecosystem & AI DevTools",
+    description:
+      "Suite of ~30 AI devtools and autonomous agent experiments (OpenClaw, MythosForge, Interview System Designer). Built custom Claude Code skills and integrations.",
+    tags: [
+      { name: "ai-agents", color: "#18BC9C" },
+      { name: "claude", color: "#aaa" },
+      { name: "python", color: "#18BC9C" },
+      { name: "typescript", color: "#aaa" },
+    ],
+    image: "/img/images.jpg",
+  },
+  {
+    name: "AI Interview Copilots",
+    description:
+      "Collection of AI-powered interview copilot systems and study clones (Open-Cluely, AuraScribe). Features native assistants and real-time interview webbing apps.",
+    tags: [
+      { name: "llm", color: "#18BC9C" },
+      { name: "react", color: "#aaa" },
+      { name: "python", color: "#18BC9C" },
+      { name: "webrtc", color: "#aaa" },
+    ],
+    image: "/img/Hacknyu.png",
+  },
+  {
+    name: "Redpen (Airbnb)",
+    description:
+      "Large-scale internal tooling using Flask, Celery, Labelbox, and Redis. Engineered robust data pipelines with SQLAlchemy and Alembic for model evaluation workflows.",
+    tags: [
+      { name: "flask", color: "#18BC9C" },
+      { name: "celery", color: "#aaa" },
+      { name: "labelbox", color: "#18BC9C" },
+      { name: "redis", color: "#aaa" },
+      { name: "sqlalchemy", color: "#18BC9C" },
+    ],
+    image: "/img/Plagiarism.jpg",
+  },
+  {
     name: "BPI Virtual Analyst (Airbnb)",
     description:
       "GenAI 5-step LLM wizard integrating 30+ models. Scaled to 10,000 rows/run for ~55 analysts. Presidio PII pipeline, AI clustering, Insight Miner.",
