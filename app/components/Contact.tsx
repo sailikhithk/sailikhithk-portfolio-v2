@@ -47,7 +47,7 @@ const labelStyle: React.CSSProperties = {
 
 export default function Contact() {
   return (
-    <section id="contact" className="section-wrapper">
+    <section id="contact" className="section-wrapper" style={{ paddingBottom: "2rem" }}>
       <div className="section-inner">
         <SectionHeading title="Get In Touch" subtitle="Contact" />
 
@@ -76,9 +76,7 @@ export default function Contact() {
                 margin: "0 0 1.5rem",
               }}
             >
-              LET&apos;S WORK
-              <br />
-              TOGETHER
+              HIRE ME
             </h2>
 
             <p
