@@ -20,7 +20,7 @@ export const projects: Project[] = [
       { name: "python", color: "#18BC9C" },
       { name: "typescript", color: "#aaa" },
     ],
-    image: "/img/images.jpg",
+    image: "/img/claude-ecosystem.png",
   },
   {
     name: "AI Interview Copilots",
@@ -32,7 +32,7 @@ export const projects: Project[] = [
       { name: "python", color: "#18BC9C" },
       { name: "webrtc", color: "#aaa" },
     ],
-    image: "/img/Hacknyu.png",
+    image: "/img/ai-copilots.png",
   },
   {
     name: "Redpen (Airbnb)",
@@ -45,7 +45,7 @@ export const projects: Project[] = [
       { name: "redis", color: "#aaa" },
       { name: "sqlalchemy", color: "#18BC9C" },
     ],
-    image: "/img/Plagiarism.jpg",
+    image: "/img/redpen-pipeline.png",
   },
   {
     name: "BPI Virtual Analyst (Airbnb)",
