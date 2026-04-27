@@ -45,7 +45,7 @@ export const projects: Project[] = [
       { name: "redis", color: "#aaa" },
       { name: "sqlalchemy", color: "#18BC9C" },
     ],
-    image: "/img/redpen-pipeline.png",
+    image: "/img/airbnb.png",
   },
   {
     name: "BPI Virtual Analyst (Airbnb)",
@@ -71,7 +71,7 @@ export const projects: Project[] = [
       { name: "openshift", color: "#aaa" },
       { name: "postgresql", color: "#18BC9C" },
     ],
-    image: "/img/hashcode.jpg",
+    image: "/img/Lilly.jpg",
   },
   {
     name: "RomeoAI",
