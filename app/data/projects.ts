@@ -74,16 +74,16 @@ export const projects: Project[] = [
     image: "/img/Lilly.jpg",
   },
   {
-    name: "RomeoAI",
+    name: "The Eye (HackNYU)",
     description:
-      "AI chat companion powered by Gemma inference. Fluid conversational UI with dark/light mode and instant responses.",
+      "Computer Vision and NLP application built to assist visually impaired individuals. Winner at HackNYU.",
     tags: [
-      { name: "react", color: "#18BC9C" },
-      { name: "gemma", color: "#aaa" },
-      { name: "ai", color: "#18BC9C" },
+      { name: "python", color: "#18BC9C" },
+      { name: "computer-vision", color: "#aaa" },
+      { name: "nlp", color: "#18BC9C" },
     ],
-    image: "/img/Hacknyu.png",
-    github: "https://github.com/sailikhithk",
+    image: "/img/the-eye.png",
+    github: "https://github.com/sailikhithk/The-Eye-HackNYU-2020",
   },
   {
     name: "ML Subsurface Pipeline (Shell PLC)",
@@ -96,29 +96,5 @@ export const projects: Project[] = [
       { name: "mlflow", color: "#aaa" },
     ],
     image: "/img/images.jpg",
-  },
-  {
-    name: "COVID-19 Analytics Dashboard",
-    description:
-      "Real-time global COVID-19 statistics and analytics dashboard.",
-    tags: [
-      { name: "python", color: "#18BC9C" },
-      { name: "plotly", color: "#aaa" },
-      { name: "flask", color: "#18BC9C" },
-    ],
-    image: "/img/covid19.png",
-    github: "https://github.com/sailikhithk/covid19-by-sailikhithk",
-  },
-  {
-    name: "ERP Analytics Dashboard (Oracle)",
-    description:
-      "Real-time ERP dashboard across 13 business units. Saved 600+ monthly work hours. Boosted quarterly client activity by 20%.",
-    tags: [
-      { name: "python", color: "#18BC9C" },
-      { name: "kafka", color: "#aaa" },
-      { name: "elk-stack", color: "#18BC9C" },
-      { name: "oracle", color: "#aaa" },
-    ],
-    image: "/img/nyc.jpg",
   },
 ];
